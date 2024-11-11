@@ -26,7 +26,20 @@ int main() {
                 WinHttpAddRequestHeaders(hRequest, L"X-OCR-SECRET: Q2hGamNTQU1FQ1BZdlpDV3FneUtPbG5FdVBpcHBwSkw=", -1, WINHTTP_ADDREQ_FLAG_ADD);
 
                 // 요청 바디 설정 (JSON 데이터)
-                const char* postData = "{\"images\": [{\"format\": \"jpg\", \"name\": \"sample\", \"url\": \"https://storage.cloud.google.com/ocr_scan_images/text.jpeg\"}], \"requestId\": \"test_request_id\", \"timestamp\": 0, \"version\": \"V2\"}";
+                const char* postData = R"({
+                    "version" : "V2",
+                    "requestId" : "1234",
+                    "timestamp" : 0,
+                    "lang" : "ko",
+                    "images" : [
+                {
+                    "format": "jpeg",
+                    "name" : "demo_2",
+                    "url" : "https://storage.cloud.google.com/ocr_scan_images/text.jpeg"
+                }
+                    ] ,
+                    "enableTableDetection": false
+                })";
                 DWORD postDataLength = strlen(postData);
 
                 // 요청 보내기
