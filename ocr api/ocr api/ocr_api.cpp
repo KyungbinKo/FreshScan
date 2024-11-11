@@ -21,15 +21,15 @@ int main() {
                 WINHTTP_FLAG_SECURE);
 
             if (hRequest) {
-                // ø‰√ª «Ï¥ı º≥¡§
+                // ÏöîÏ≤≠ Ìó§Îçî ÏÑ§Ï†ï
                 WinHttpAddRequestHeaders(hRequest, L"Content-Type: application/json", -1, WINHTTP_ADDREQ_FLAG_ADD);
                 WinHttpAddRequestHeaders(hRequest, L"X-OCR-SECRET: Q2hGamNTQU1FQ1BZdlpDV3FneUtPbG5FdVBpcHBwSkw=", -1, WINHTTP_ADDREQ_FLAG_ADD);
 
-                // ø‰√ª πŸµ º≥¡§ (JSON µ•¿Ã≈Õ)
-                const char* postData = "{\"images\": [{\"format\": \"jpg\", \"name\": \"sample\", \"url\": \"https://storage.googleapis.com/ocr_scan_images/text.jpeg\"}], \"requestId\": \"test_request_id\", \"timestamp\": 0, \"version\": \"V2\"}";
+                // ÏöîÏ≤≠ Î∞îÎîî ÏÑ§Ï†ï (JSON Îç∞Ïù¥ÌÑ∞)
+                const char* postData = "{\"images\": [{\"format\": \"jpg\", \"name\": \"sample\", \"url\": \"https://storage.cloud.google.com/ocr_scan_images/text.jpeg\"}], \"requestId\": \"test_request_id\", \"timestamp\": 0, \"version\": \"V2\"}";
                 DWORD postDataLength = strlen(postData);
 
-                // ø‰√ª ∫∏≥ª±‚
+                // ÏöîÏ≤≠ Î≥¥ÎÇ¥Í∏∞
                 BOOL bResults = WinHttpSendRequest(hRequest,
                     WINHTTP_NO_ADDITIONAL_HEADERS, 0,
                     (LPVOID)postData, postDataLength,
@@ -41,7 +41,7 @@ int main() {
                         DWORD dwDownloaded = 0;
                         LPSTR pszOutBuffer;
 
-                        // ªÁøÎ ∞°¥…«— µ•¿Ã≈Õ ≈©±‚∏¶ »Æ¿Œ«’¥œ¥Ÿ.
+                        // ÏÇ¨Ïö© Í∞ÄÎä•Ìïú Îç∞Ïù¥ÌÑ∞ ÌÅ¨Í∏∞Î•º ÌôïÏù∏Ìï©ÎãàÎã§.
                         do {
                             dwSize = 0;
                             if (WinHttpQueryDataAvailable(hRequest, &dwSize)) {
@@ -50,7 +50,7 @@ int main() {
                                     ZeroMemory(pszOutBuffer, dwSize + 1);
 
                                     if (WinHttpReadData(hRequest, (LPVOID)pszOutBuffer, dwSize, &dwDownloaded)) {
-                                        // ¿¿¥‰ µ•¿Ã≈Õ∏¶ √‚∑¬«œ∞≈≥™ ¿˙¿Â«’¥œ¥Ÿ.
+                                        // ÏùëÎãµ Îç∞Ïù¥ÌÑ∞Î•º Ï∂úÎ†•ÌïòÍ±∞ÎÇò Ï†ÄÏû•Ìï©ÎãàÎã§.
                                         std::cout << pszOutBuffer << std::endl;
                                     }
                                     delete[] pszOutBuffer;
@@ -59,11 +59,11 @@ int main() {
                         } while (dwSize > 0);
                     }
                     else {
-                        std::cerr << "¿¿¥‰ ºˆΩ≈ Ω«∆–" << std::endl;
+                        std::cerr << "ÏùëÎãµ ÏàòÏã† Ïã§Ìå®" << std::endl;
                     }
                 }
                 else {
-                    std::cerr << "ø‰√ª Ω«∆–" << std::endl;
+                    std::cerr << "ÏöîÏ≤≠ Ïã§Ìå®" << std::endl;
                 }
 
                 WinHttpCloseHandle(hRequest);
