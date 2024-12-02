@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'receipt_recognition_screen.dart';
 import 'data_screen.dart'; // 외부 화면 파일 추가
 import 'database_functions.dart'; // 외부 기능 파일 추가
+import 'calendar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -69,11 +70,31 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
-        title: const Text(
-          "FreshScan",
-          style: TextStyle(fontSize: 22, color: Colors.white),
-        ),
+        title: Text('FreshScan'),
         backgroundColor: Colors.blueAccent,
+        actions: [
+          IconButton(
+            iconSize: 24,
+            icon: const Icon(Icons.center_focus_weak),
+            onPressed: () {},
+          ),
+          IconButton(
+            iconSize: 24,
+            icon: const Icon(Icons.calendar_today),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CalendarScreen()),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 24,
+            icon: const Icon(Icons.account_circle_outlined),
+            onPressed: () {},
+          ),
+        ],
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
