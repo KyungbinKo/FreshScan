@@ -1,3 +1,0 @@
-﻿  ocr_api.cpp
-C:\Users\leh04\source\repos\ocr api\ocr api\ocr_api.cpp(30,38): warning C4267: '초기화 중': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  ocr api.vcxproj -> C:\Users\leh04\source\repos\ocr api\x64\Debug\ocr api.exe
