@@ -184,6 +184,8 @@ class _ItemsScreenState extends State<ItemsScreen> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text("상품이 등록되었습니다.")),
                 );
+                Navigator.pop(context); // 버튼 클릭 후 홈화면으로 이동
+                Navigator.pop(context);
               },
               child: Text("등록"),
             ),
