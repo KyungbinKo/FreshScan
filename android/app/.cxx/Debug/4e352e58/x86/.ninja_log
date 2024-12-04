@@ -1,0 +1,11 @@
+# ninja log v5
+20	161	7550324916976655	CMakeFiles/database.dir/database.c.o	a1ffba24ba5ccfd4
+1	2657	7550324941494865	CMakeFiles/sqlite3.dir/sqlite3.c.o	8b870c171545a57
+2658	2902	7550324943815502	libsqlite3.a	10aa67819808029f
+2902	3117	7550324946544586	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so	f5d8123ed11d990a
+1	148	7550347587300726	CMakeFiles/database.dir/database.c.o	a1ffba24ba5ccfd4
+148	378	7550347589631196	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so	f5d8123ed11d990a
+2	132	7550349392397190	CMakeFiles/database.dir/database.c.o	a1ffba24ba5ccfd4
+132	358	7550349394672601	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so	f5d8123ed11d990a
+2	121	7550351082690632	CMakeFiles/database.dir/database.c.o	a1ffba24ba5ccfd4
+122	387	7550351085201756	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so	f5d8123ed11d990a

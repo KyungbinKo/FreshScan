@@ -1,0 +1,4 @@
+C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86/CMakeFiles/sqlite3.dir
+C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86/CMakeFiles/database.dir
+C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86/CMakeFiles/edit_cache.dir
+C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86/CMakeFiles/rebuild_cache.dir

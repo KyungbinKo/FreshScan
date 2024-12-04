@@ -1,0 +1,1 @@
+C:\Users\bin21\StudioProjects\barcodescanner\FreshScan\build\app\intermediates\cxx\Debug\4e352e58\obj\arm64-v8a
