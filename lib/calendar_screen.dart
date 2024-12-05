@@ -1,6 +1,7 @@
 // calender_screen.dart
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'database_functions.dart';
 
 class CalendarScreen extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     DateTime(2024, 11, 21): ['예시3', '예시4'],
     DateTime(2024, 11, 22): ['예시5'],
   };
+
 
   List<String> _getEventsForDay(DateTime day) {
     return _events[DateTime(day.year, day.month, day.day)] ?? [];
