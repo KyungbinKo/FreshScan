@@ -1,3 +1,5 @@
+// By 고경빈, 이의현
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // 날짜 형식 지정
 import 'database_functions.dart'; // 데이터베이스 관련 함수 임포트

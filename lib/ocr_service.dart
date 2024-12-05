@@ -1,3 +1,5 @@
+// By 고경빈
+
 // ocr_service.dart
 import 'dart:io';
 import 'package:google_ml_kit/google_ml_kit.dart';

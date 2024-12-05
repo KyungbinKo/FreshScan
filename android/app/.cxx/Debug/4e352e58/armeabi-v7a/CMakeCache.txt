@@ -217,8 +217,8 @@ CMAKE_SYSTEM_NAME:UNINITIALIZED=Android
 //No help, variable specified on the command line.
 CMAKE_SYSTEM_VERSION:UNINITIALIZED=21
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=C:\Users\bin21\AppData\Local\Android\sdk\ndk\23.1.7779620\build\cmake\android.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -236,7 +236,7 @@ Project_IS_TOP_LEVEL:STATIC=ON
 Project_SOURCE_DIR:STATIC=C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native
 
 //Dependencies for the target
-database_LIB_DEPENDS:STATIC=general;sqlite3;general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;
+database_LIB_DEPENDS:STATIC=general;sqlite3;general;log;
 
 //Dependencies for the target
 gpt_api_LIB_DEPENDS:STATIC=general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;

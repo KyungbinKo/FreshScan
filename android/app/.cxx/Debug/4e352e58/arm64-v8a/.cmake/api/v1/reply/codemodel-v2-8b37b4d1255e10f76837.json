@@ -16,8 +16,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -33,8 +32,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -43,15 +41,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "database::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-database-Debug-2c105d2100259a8f17f7.json",
+					"jsonFile" : "target-database-Debug-a90e38dc98080445c6c0.json",
 					"name" : "database",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "gpt_api::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-gpt_api-Debug-6229c45cfe7816a4880f.json",
-					"name" : "gpt_api",
 					"projectIndex" : 0
 				},
 				{

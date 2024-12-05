@@ -1,3 +1,5 @@
+// By 고경빈
+
 import 'package:flutter/material.dart';
 import 'database_functions.dart'; // 데이터베이스에서 유통기한 임박 상품을 가져오는 함수
 
