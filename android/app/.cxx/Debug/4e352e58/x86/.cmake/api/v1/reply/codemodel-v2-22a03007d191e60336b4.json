@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,14 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "database::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-database-Debug-4802c78b638d79241b17.json",
+					"jsonFile" : "target-database-Debug-3b3e4bbe322f55df90aa.json",
 					"name" : "database",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "gpt_api::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gpt_api-Debug-9e8d3406e53abd49a840.json",
+					"name" : "gpt_api",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "sqlite3::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sqlite3-Debug-6c362651ee367af731b4.json",
+					"jsonFile" : "target-sqlite3-Debug-25217c81481bbffc5dcc.json",
 					"name" : "sqlite3",
 					"projectIndex" : 0
 				}
@@ -58,7 +67,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86_64",
+		"build" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86",
 		"source" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native"
 	},
 	"version" : 

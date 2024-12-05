@@ -101,10 +101,10 @@ build CMakeFiles/database.dir/database.c.o: C_COMPILER__database_Debug C$:/Users
 #############################################
 # Link the shared library C:\Users\bin21\StudioProjects\barcodescanner\FreshScan\build\app\intermediates\cxx\Debug\4e352e58\obj\x86\libdatabase.so
 
-build C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so: C_SHARED_LIBRARY_LINKER__database_Debug CMakeFiles/database.dir/database.c.o | libsqlite3.a || libsqlite3.a
+build C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so: C_SHARED_LIBRARY_LINKER__database_Debug CMakeFiles/database.dir/database.c.o | libsqlite3.a C$:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so || libsqlite3.a
   LANGUAGE_COMPILE_FLAGS = -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info
   LINK_FLAGS = -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Qunused-arguments -Wl,--no-undefined
-  LINK_LIBRARIES = libsqlite3.a  -llog   -latomic -lm
+  LINK_LIBRARIES = libsqlite3.a  C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so   -latomic -lm
   OBJECT_DIR = CMakeFiles\database.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -113,6 +113,41 @@ build C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermed
   TARGET_COMPILE_PDB = CMakeFiles\database.dir\
   TARGET_FILE = C:\Users\bin21\StudioProjects\barcodescanner\FreshScan\build\app\intermediates\cxx\Debug\4e352e58\obj\x86\libdatabase.so
   TARGET_PDB = C:\Users\bin21\StudioProjects\barcodescanner\FreshScan\build\app\intermediates\cxx\Debug\4e352e58\obj\x86\libdatabase.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gpt_api
+
+
+#############################################
+# Order-only phony target for gpt_api
+
+build cmake_object_order_depends_target_gpt_api: phony || CMakeFiles/gpt_api.dir
+
+build CMakeFiles/gpt_api.dir/gpt_api/breakfast_recipe.c.o: C_COMPILER__gpt_api_Debug C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native/gpt_api/breakfast_recipe.c || cmake_object_order_depends_target_gpt_api
+  DEP_FILE = CMakeFiles\gpt_api.dir\gpt_api\breakfast_recipe.c.o.d
+  FLAGS = -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC
+  INCLUDES = -IC:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native/gpt_api
+  OBJECT_DIR = CMakeFiles\gpt_api.dir
+  OBJECT_FILE_DIR = CMakeFiles\gpt_api.dir\gpt_api
+  TARGET_COMPILE_PDB = CMakeFiles\gpt_api.dir\gpt_api.pdb
+  TARGET_PDB = libgpt_api.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gpt_api
+
+
+#############################################
+# Link the static library libgpt_api.a
+
+build libgpt_api.a: C_STATIC_LIBRARY_LINKER__gpt_api_Debug CMakeFiles/gpt_api.dir/gpt_api/breakfast_recipe.c.o
+  LANGUAGE_COMPILE_FLAGS = -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info
+  OBJECT_DIR = CMakeFiles\gpt_api.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\gpt_api.dir\gpt_api.pdb
+  TARGET_FILE = libgpt_api.a
+  TARGET_PDB = libgpt_api.pdb
 
 
 #############################################
@@ -142,6 +177,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build database: phony C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so
 
+build gpt_api: phony libgpt_api.a
+
 build libdatabase.so: phony C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so
 
 build sqlite3: phony libsqlite3.a
@@ -154,7 +191,7 @@ build sqlite3: phony libsqlite3.a
 #############################################
 # Folder: C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86
 
-build all: phony libsqlite3.a C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so
+build all: phony libsqlite3.a C$:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so libgpt_api.a
 
 # =============================================================================
 # Built-in targets

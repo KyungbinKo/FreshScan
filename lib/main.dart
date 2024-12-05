@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'database_functions.dart';
+import 'expiry_alert.dart';
 import 'receipt_recognition_screen.dart';
 import 'data_screen.dart'; // 외부 화면 파일 추가
-import 'database_functions.dart'; // 외부 기능 파일 추가
 import 'calendar_screen.dart';
+import 'recipe_selection_screen.dart'; // 레시피 선택 화면
 
 void main() {
   runApp(const MyApp());
@@ -34,9 +36,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // 앱 실행 후 5초 뒤에 HomeScreen으로 이동하고 팝업을 띄운다.
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
     });
   }
 
@@ -62,11 +67,26 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _hasShownPopup = false;
+
+  @override
   Widget build(BuildContext context) {
+    // 앱 시작 후 첫 번째로만 팝업을 띄운다.
+    if (!_hasShownPopup) {
+      _hasShownPopup = true;
+      Future.delayed(Duration.zero, () {
+        showExpiryAlert(context);
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
@@ -100,7 +120,6 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            // Drawer의 상단 부분 (헤더)
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -113,12 +132,20 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Drawer의 리스트 아이템들
+            ListTile(
+              leading: Icon(Icons.center_focus_weak),
+              title: Text('상품 등록'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ReceiptRecognitionScreen()),
+                );
+              },
+            ),
             ListTile(
                 leading: Icon(Icons.format_list_bulleted),
-                title: Text('상품 목록'),
+                title: Text('My Data'),
                 onTap: () async {
-                  // 'My Data' 버튼을 클릭하면 데이터베이스에서 데이터를 가져와 화면 전환
                   List<Map<String, dynamic>> items = await fetchDataFromDatabase();
                   Navigator.push(
                     context,
@@ -129,18 +156,18 @@ class HomeScreen extends StatelessWidget {
                 }
             ),
             ListTile(
-              leading: Icon(Icons.center_focus_weak),
-              title: Text('상품 등록'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: Icon(Icons.recommend),
-              title: Text('레시피'),
-              onTap: () {},
+              title: Text('레시피 추천'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RecipeSelectionScreen()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.calendar_today),
-              title: Text('유통기한 캘린더'),
+              title: Text('My 캘린더'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -168,10 +195,9 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildButton(context, "영수증 인식", ReceiptRecognitionScreen()),
+            _buildButton(context, "상품 등록", ReceiptRecognitionScreen()),
             const SizedBox(height: 20),
             _buildButton(context, "My Data", () async {
-              // 'My Data' 버튼을 클릭하면 데이터베이스에서 데이터를 가져와 화면 전환
               List<Map<String, dynamic>> items = await fetchDataFromDatabase();
               Navigator.push(
                 context,
@@ -180,6 +206,23 @@ class HomeScreen extends StatelessWidget {
                 ),
               );
             }),
+            const SizedBox(height: 20),
+            _buildButton(context, "레시피 추천", () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RecipeSelectionScreen()),
+              );
+            }),
+            const SizedBox(height: 20),
+            _buildButton(context, "My 캘린더", () async {
+              List<Map<String, dynamic>> items = await fetchDataFromDatabase();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CalendarScreen(),
+                ),
+              );
+            })
           ],
         ),
       ),
@@ -197,7 +240,7 @@ class HomeScreen extends StatelessWidget {
             MaterialPageRoute(builder: (context) => screen),
           );
         }
-            : screen, // 화면이 비동기 함수인 경우 처리
+            : screen,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 15),
           backgroundColor: Colors.blueAccent,

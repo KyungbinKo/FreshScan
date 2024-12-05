@@ -1,11 +1,5 @@
 # ninja log v5
-0	154	7550324848685509	CMakeFiles/database.dir/database.c.o	6647c35dcae62a2a
-19	3798	7550324884632277	CMakeFiles/sqlite3.dir/sqlite3.c.o	c97e12bd6f4fd090
-3799	4036	7550324887052353	libsqlite3.a	10aa67819808029f
-4036	4278	7550324889917229	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/armeabi-v7a/libdatabase.so	9b91e31ac5020777
-2	141	7550347582239493	CMakeFiles/database.dir/database.c.o	6647c35dcae62a2a
-141	381	7550347584600197	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/armeabi-v7a/libdatabase.so	9b91e31ac5020777
-2	134	7550349387477220	CMakeFiles/database.dir/database.c.o	6647c35dcae62a2a
-135	372	7550349389808856	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/armeabi-v7a/libdatabase.so	9b91e31ac5020777
-2	130	7550351077681163	CMakeFiles/database.dir/database.c.o	6647c35dcae62a2a
-130	382	7550351080121068	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/armeabi-v7a/libdatabase.so	9b91e31ac5020777
+28	218	7551074986313542	CMakeFiles/database.dir/database.c.o	6647c35dcae62a2a
+1	5470	7551075038009602	CMakeFiles/sqlite3.dir/sqlite3.c.o	c97e12bd6f4fd090
+5471	5811	7551075041505487	libsqlite3.a	10aa67819808029f
+5811	6116	7551075045292602	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/armeabi-v7a/libdatabase.so	eecf66baba3d1121

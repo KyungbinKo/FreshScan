@@ -73,22 +73,22 @@ class _ItemsScreenState extends State<ItemsScreen> {
     });
   }
 
-  Widget _buildQuantityField(int index) {
-    return Row(
-      children: [
-        Text("수량: "),
-        SizedBox(
-          width: 40,
-          child: TextFormField(
-            initialValue: widget.items[index]['quantity'].toString(),
-            keyboardType: TextInputType.number,
-            onChanged: (value) =>
-                widget.onUpdateItem(index, 'quantity', int.tryParse(value) ?? 1),
-          ),
-        ),
-      ],
-    );
-  }
+  // Widget _buildQuantityField(int index) {
+  //   return Row(
+  //     children: [
+  //       Text("수량: "),
+  //       SizedBox(
+  //         width: 40,
+  //         child: TextFormField(
+  //           initialValue: widget.items[index]['quantity'].toString(),
+  //           keyboardType: TextInputType.number,
+  //           onChanged: (value) =>
+  //               widget.onUpdateItem(index, 'quantity', int.tryParse(value) ?? 1),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildDatePicker(
       BuildContext context, DateTime? initialDate, String label, Function(DateTime) onDateChanged) {
@@ -151,11 +151,11 @@ class _ItemsScreenState extends State<ItemsScreen> {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _buildQuantityField(index),
+                        // _buildQuantityField(index),
                         _buildDatePicker(
                           context,
                           widget.items[index]['expirationDate'], // nullable로 변경 후 null 처리
-                          "유통기한",
+                          "소비기한",
                               (date) => widget.onUpdateItem(
                             index,
                             'expirationDate',

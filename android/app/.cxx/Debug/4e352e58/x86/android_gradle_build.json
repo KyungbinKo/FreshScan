@@ -24,6 +24,12 @@
       "output": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\build\\app\\intermediates\\cxx\\Debug\\4e352e58\\obj\\x86\\libdatabase.so",
       "runtimeFiles": []
     },
+    "gpt_api::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "gpt_api",
+      "output": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\.cxx\\Debug\\4e352e58\\x86\\libgpt_api.a"
+    },
     "sqlite3::@6890427a1f51a3e7e1df": {
       "toolchain": "toolchain",
       "abi": "x86",
