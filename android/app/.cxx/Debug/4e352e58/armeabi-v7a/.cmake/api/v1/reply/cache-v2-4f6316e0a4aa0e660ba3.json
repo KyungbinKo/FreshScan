@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86_64"
+			"value" : "armeabi-v7a"
 		},
 		{
 			"name" : "ANDROID_NDK",
@@ -63,7 +63,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86_64"
+			"value" : "armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_ANDROID_NDK",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86_64"
+			"value" : "c:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -379,7 +379,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions"
+			"value" : "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_DEBUG",
@@ -671,7 +671,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\build\\app\\intermediates\\cxx\\Debug\\4e352e58\\obj\\x86_64"
+			"value" : "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\build\\app\\intermediates\\cxx\\Debug\\4e352e58\\obj\\armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -943,7 +943,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\build\\app\\intermediates\\cxx\\Debug\\4e352e58\\obj\\x86_64"
+			"value" : "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\build\\app\\intermediates\\cxx\\Debug\\4e352e58\\obj\\armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86_64"
+			"value" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/armeabi-v7a"
 		},
 		{
 			"name" : "Project_IS_TOP_LEVEL",
@@ -1251,7 +1251,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;sqlite3;general;log;"
+			"value" : "general;sqlite3;general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;"
+		},
+		{
+			"name" : "gpt_api_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;"
 		},
 		{
 			"name" : "log-lib",
@@ -1263,7 +1275,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/liblog.so"
+			"value" : "C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so"
 		}
 	],
 	"kind" : "cache",

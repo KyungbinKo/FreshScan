@@ -8,5 +8,10 @@
   "directory": "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/armeabi-v7a",
   "command": "C:\\Users\\bin21\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi21 --sysroot=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Ddatabase_EXPORTS -IC:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC -o CMakeFiles\\database.dir\\database.c.o -c C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\database.c",
   "file": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\database.c"
+},
+{
+  "directory": "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/armeabi-v7a",
+  "command": "C:\\Users\\bin21\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi21 --sysroot=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IC:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native/gpt_api -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC -o CMakeFiles\\gpt_api.dir\\gpt_api\\breakfast_recipe.c.o -c C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\gpt_api\\breakfast_recipe.c",
+  "file": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\gpt_api\\breakfast_recipe.c"
 }
 ]

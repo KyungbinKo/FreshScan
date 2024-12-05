@@ -1,0 +1,142 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'database_functions.dart'; // 데이터베이스에서 데이터를 불러오는 함수가 정의된 파일을 import
+
+class DinnerScreen extends StatefulWidget {
+  const DinnerScreen({super.key});
+
+  @override
+  _DinnerScreenState createState() => _DinnerScreenState();
+}
+
+class _DinnerScreenState extends State<DinnerScreen> {
+  // 저녁 레시피 리스트
+  List<String> dinnerItems = [];
+  String recipeContent = ''; // GPT API에서 반환된 레시피 내용
+
+  @override
+  void initState() {
+    super.initState();
+    _loadDinnerItems();
+  }
+
+  // 데이터베이스에서 상품명만 불러오기
+  Future<void> _loadDinnerItems() async {
+    List<Map<String, dynamic>> items = await fetchNames();
+
+    setState(() {
+      dinnerItems = items.map((item) => item['name'] as String).toList();
+    });
+
+    if (dinnerItems.isNotEmpty) {
+      await _fetchRecipeFromAPI(dinnerItems);
+    }
+  }
+
+  // API에서 레시피를 받아오기
+  Future<void> _fetchRecipeFromAPI(List<String> productList) async {
+    final String apiUrl = 'https://api.openai.com/v1/chat/completions';
+    final String apiKey = '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';
+
+    String prompt = "다음 재료들로 저녁 레시피 3가지를 추천해 주세요: ${productList.join(", ")}. 간단한 조리법과 필요한 재료도 함께 출력해주세요. 출력은 한국어로 작성해주세요.";
+
+    final Map<String, dynamic> requestBody = {
+      "model": "gpt-4o-mini",
+      "messages": [
+        {
+          "role": "system",
+          "content": "사용자가 입력한 재료 목록을 바탕으로 저녁 레시피를 추천해주세요. 저녁 메뉴는 가족과 함께 먹기 좋은 든든한 메뉴입니다. 모든 조미료는 자유롭게 사용할 수 있습니다. 출력은 한국어로 레시피 이름, 재료, 조리법을 포함해야 합니다."
+        },
+        {
+          "role": "user",
+          "content": prompt
+        }
+      ],
+      "temperature": 1.0,
+      "top_p": 0.9,
+      "frequency_penalty": 0.0
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $apiKey',
+        },
+        body: json.encode(requestBody),
+      );
+
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(utf8.decode(response.bodyBytes));  // 응답을 UTF-8로 디코딩
+
+        print('API Response: $jsonResponse');
+
+        if (jsonResponse.containsKey('choices') &&
+            jsonResponse['choices'] is List &&
+            jsonResponse['choices'].isNotEmpty) {
+
+          final message = jsonResponse['choices'][0]['message'];
+          if (message != null && message.containsKey('content')) {
+            final String content = message['content'];
+
+            setState(() {
+              recipeContent = content;
+            });
+          } else {
+            setState(() {
+              recipeContent = '메시지 내용이 없습니다.';
+            });
+          }
+        } else {
+          setState(() {
+            recipeContent = '예상과 다른 응답 형식입니다: $jsonResponse';
+          });
+        }
+      } else {
+        setState(() {
+          recipeContent = 'API 요청 실패: ${response.statusCode}';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        recipeContent = '오류 발생: $e';
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('저녁 레시피'),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            if (recipeContent.isEmpty)
+              Align(
+                alignment: Alignment.center, // 좌우 중앙
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 350), // 상단 여백으로 아래로 위치 조정
+                  child: const CircularProgressIndicator(),
+                ),
+              )
+            else
+              Expanded(
+                child: SingleChildScrollView(
+                    child: Text(
+                      '추천된 레시피:\n\n${recipeContent.replaceAll(RegExp(r'[#*]'), '')}',
+                      style: const TextStyle(fontSize: 16),
+                    )
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}

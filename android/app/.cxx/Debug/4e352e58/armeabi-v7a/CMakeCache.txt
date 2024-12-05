@@ -236,7 +236,10 @@ Project_IS_TOP_LEVEL:STATIC=ON
 Project_SOURCE_DIR:STATIC=C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native
 
 //Dependencies for the target
-database_LIB_DEPENDS:STATIC=general;sqlite3;general;log;
+database_LIB_DEPENDS:STATIC=general;sqlite3;general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;
+
+//Dependencies for the target
+gpt_api_LIB_DEPENDS:STATIC=general;C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;
 
 //Path to a library.
 log-lib:FILEPATH=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
