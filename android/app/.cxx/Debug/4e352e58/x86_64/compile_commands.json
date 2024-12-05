@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86_64",
+  "command": "C:\\Users\\bin21\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --sysroot=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC -o CMakeFiles\\sqlite3.dir\\sqlite3.c.o -c C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\sqlite3.c",
+  "file": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\sqlite3.c"
+},
+{
+  "directory": "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/.cxx/Debug/4e352e58/x86_64",
+  "command": "C:\\Users\\bin21\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --sysroot=C:/Users/bin21/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Ddatabase_EXPORTS -IC:/Users/bin21/StudioProjects/barcodescanner/FreshScan/android/app/src/main/native -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC -o CMakeFiles\\database.dir\\database.c.o -c C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\database.c",
+  "file": "C:\\Users\\bin21\\StudioProjects\\barcodescanner\\FreshScan\\android\\app\\src\\main\\native\\database.c"
+}
+]

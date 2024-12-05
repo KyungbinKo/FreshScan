@@ -22,3 +22,24 @@ Future _createDB(Database db, int version) async {
     );
   ''');
 }
+
+// 데이터 업데이트 함수 추가
+Future<void> updateItemInDatabase(int id, String name, String expirationDate) async {
+  final db = await _initDB('items.db');
+  await db.update(
+    'items',
+    {'name': name, 'expirationDate': expirationDate},
+    where: 'id = ?',
+    whereArgs: [id],
+  );
+}
+
+// 데이터 삭제 함수 추가
+Future<void> deleteItemFromDatabase(int id) async {
+  final db = await _initDB('items.db');
+  await db.delete(
+    'items',
+    where: 'id = ?',
+    whereArgs: [id],
+  );
+}
