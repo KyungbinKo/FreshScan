@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86/libdatabase.so"
+			"path" : "C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86_64/libdatabase.so"
 		}
 	],
 	"backtrace" : 1,
@@ -32,13 +32,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 20,
+				"line" : 15,
 				"parent" : 0
 			}
 		]
@@ -49,7 +49,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC"
+					"fragment" : "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -g  -fno-limit-debug-info -fPIC"
 				}
 			],
 			"defines" : 
@@ -99,7 +99,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\bin21\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\21\\liblog.so",
+				"fragment" : "-llog",
 				"role" : "libraries"
 			},
 			{

@@ -1,5 +1,6 @@
 # ninja log v5
 0	190	7551075164252313	CMakeFiles/database.dir/database.c.o	811f1e79d4320e3f
+3591	3927	7551075201580212	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86_64/libdatabase.so	c45bf41714f84704
 24	3260	7551075194309769	CMakeFiles/sqlite3.dir/sqlite3.c.o	927b8913a31739fc
 3260	3591	7551075197392917	libsqlite3.a	10aa67819808029f
-3591	3927	7551075201580212	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86_64/libdatabase.so	c45bf41714f84704
+1	275	7551229355687796	C:/Users/bin21/StudioProjects/barcodescanner/FreshScan/build/app/intermediates/cxx/Debug/4e352e58/obj/x86_64/libdatabase.so	9595d1bd74925663

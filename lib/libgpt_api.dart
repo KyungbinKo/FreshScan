@@ -1,3 +1,5 @@
+// By 고경빈
+
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 
