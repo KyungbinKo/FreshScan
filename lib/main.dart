@@ -94,6 +94,15 @@ class _HomeScreenState extends State<HomeScreen> {
       _hasShownPopup = true; // 팝업을 한 번만 띄우기 위해 true로 설정
       Future.delayed(Duration.zero, () {
         showExpiryAlert(context); // 만료 경고 팝업 호출
+        // 상단 알림 바 띄우기
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('소비기한 임박 상품이 있습니다!'),
+            duration: Duration(seconds: 10), // 알림이 5초 동안 표시됨
+            backgroundColor: Colors.blueAccent, // 알림 색상
+          ),
+        );
+        // showOverlayAlert(context); // 화면 상단 알림
       });
     }
 
