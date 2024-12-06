@@ -1,3 +1,4 @@
+// By 고경빈
 #include <sqlite3.h>
 #include <jni.h>
 #include <stdio.h>

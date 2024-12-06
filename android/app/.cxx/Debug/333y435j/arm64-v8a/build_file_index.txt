@@ -1,0 +1,1 @@
+C:\Users\bin21\StudioProjects\barcodescanner\FreshScan\android\app\src\main\native_고경빈\CMakeLists.txt
