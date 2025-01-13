@@ -7,11 +7,11 @@
 #pragma comment(lib, "winhttp.lib")
 
 int main() {
-    // ÄÜ¼Ö, Ãâ·ÂÀ» UTF-8·Î ¼³Á¤
+    // ì½˜ì†”, ì¶œë ¥ì„ UTF-8ë¡œ ì„¤ì •
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 
-    const wchar_t* apiKey = L"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";
+    const wchar_t* apiKey = L"***";
     const wchar_t* openAiEndpoint = L"api.openai.com";
     const wchar_t* apiUrl = L"/v1/chat/completions";
 
@@ -42,22 +42,22 @@ int main() {
         return 1;
     }
 
-    // ÀÔ·Â ¹Ş±â
+    // ì…ë ¥ ë°›ê¸°
     char ingredients[1024];
     fgets(ingredients, sizeof(ingredients), stdin);
-    ingredients[strcspn(ingredients, "\n")] = 0;  // °³Çà ¹®ÀÚ Á¦°Å
+    ingredients[strcspn(ingredients, "\n")] = 0;  // ê°œí–‰ ë¬¸ì ì œê±°
 
-    // ¸ÖÆ¼¹ÙÀÌÆ® ¹®ÀÚ¿­À» À¯´ÏÄÚµå ¹®ÀÚ¿­·Î º¯È¯
+    // ë©€í‹°ë°”ì´íŠ¸ ë¬¸ìì—´ì„ ìœ ë‹ˆì½”ë“œ ë¬¸ìì—´ë¡œ ë³€í™˜
     wchar_t ingredientsW[1024];
     MultiByteToWideChar(CP_UTF8, 0, ingredients, -1, ingredientsW, sizeof(ingredientsW) / sizeof(wchar_t));
 
-    // JSON ¿äÃ» ¹Ùµğ ±¸¼º
+    // JSON ìš”ì²­ ë°”ë”” êµ¬ì„±
     wchar_t requestBodyW[1024];
     swprintf(requestBodyW, sizeof(requestBodyW) / sizeof(wchar_t),
-        L"{\"model\": \"gpt-4o\", \"messages\": [{\"role\": \"user\", \"content\": \"Find expiration date, use-by date of %ls and follow these conditions. 1.output language: Korean 2.expiration date and use-by date should be based on Korea 3. Unit must be 'day' 4.output form: {»óÇ°¸í: (product name), ¼Òºñ±âÇÑ: (expiration date plus use-by date)ÀÏ} 5.The answer should follow only a set format\"}], \"temperature\": 0.0, \"top_p\": 0.5}",
+        L"{\"model\": \"gpt-4o\", \"messages\": [{\"role\": \"user\", \"content\": \"Find expiration date, use-by date of %ls and follow these conditions. 1.output language: Korean 2.expiration date and use-by date should be based on Korea 3. Unit must be 'day' 4.output form: {ìƒí’ˆëª…: (product name), ì†Œë¹„ê¸°í•œ: (expiration date plus use-by date)ì¼} 5.The answer should follow only a set format\"}], \"temperature\": 0.0, \"top_p\": 0.5}",
         ingredientsW);
 
-    // UTF-8·Î º¯È¯
+    // UTF-8ë¡œ ë³€í™˜
     int utf8Len = WideCharToMultiByte(CP_UTF8, 0, requestBodyW, -1, NULL, 0, NULL, NULL);
     char* requestBody = (char*)malloc(utf8Len);
     if (!requestBody) {
@@ -69,7 +69,7 @@ int main() {
     }
     WideCharToMultiByte(CP_UTF8, 0, requestBodyW, -1, requestBody, utf8Len, NULL, NULL);
 
-    // Çì´õ ¼³Á¤ ¼öÁ¤
+    // í—¤ë” ì„¤ì • ìˆ˜ì •
     wchar_t headers[1024];
     swprintf(headers, sizeof(headers) / sizeof(wchar_t), L"Content-Type: application/json\r\nAuthorization: Bearer %s", apiKey);
 
@@ -93,7 +93,7 @@ int main() {
         return 1;
     }
 
-    // ÀÀ´ä µ¥ÀÌÅÍ ÀĞ±â
+    // ì‘ë‹µ ë°ì´í„° ì½ê¸°
     DWORD dwSize = 0;
     DWORD dwDownloaded = 0;
     LPVOID lpOutBuffer = NULL;
@@ -125,7 +125,7 @@ int main() {
         }
     } while (dwSize > 0);
 
-    // "content" ÇÊµå ÃßÃâ
+    // "content" í•„ë“œ ì¶”ì¶œ
     char* contentStart = strstr(response, "\"content\": \"");
     if (contentStart) {
         contentStart += strlen("\"content\": \"");
@@ -142,7 +142,7 @@ int main() {
         printf("Content field not found in response.\n");
     }
 
-    // ¸Ş¸ğ¸® ÇØÁ¦ ¹× ÇÚµé ´İ±â
+    // ë©”ëª¨ë¦¬ í•´ì œ ë° í•¸ë“¤ ë‹«ê¸°
     free(requestBody);
     WinHttpCloseHandle(hRequest);
     WinHttpCloseHandle(hConnect);
