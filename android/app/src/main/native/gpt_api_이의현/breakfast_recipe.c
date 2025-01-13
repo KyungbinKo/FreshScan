@@ -11,7 +11,7 @@ int main() {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 
-    const wchar_t* apiKey = L"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";
+    const wchar_t* apiKey = L"***";
     const wchar_t* openAiEndpoint = L"api.openai.com";
     const wchar_t* apiUrl = L"/v1/chat/completions";
 
